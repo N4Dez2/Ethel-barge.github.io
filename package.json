@@ -1,0 +1,25 @@
+{
+  "name": "pets-prismic",
+  "description": "Prismic Express Example",
+  "engines": {
+    "node": "16.x"
+  },
+  "type":"module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "homepage": "https://github.com/buttercms/buttercms-node-example",
+  "author": "ButterCMS <support@buttercms.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/buttercms/buttercms-node-example.git"
+  },
+  "dependencies": {
+    "express": "^4.17.2",
+    "hbs": "^4.2.0",
+    "@prismicio/helpers": "^2.0.0",
+    "@prismicio/client": "^6.1.0",
+    "node-fetch": "^3.2.0"
+  },
+  "license": "MIT"
+}

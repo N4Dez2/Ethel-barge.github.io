@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ethel-Trust</title>
+        <meta name="description" content="Ethel-Trust site based on glitch, express, and data from a Prismic HeadlessCMS." />
+        <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="/style.css" />
+        <script src="/main.js" type="module"></script>
+
+        {{{block "stylesheets"}}}
+
+        <script src="https://button.glitch.me/button.js"></script>
+    </head>
+    <body class="center">
+        <header>
+            <h1>
+                {{{block "title" }}} : Ethel-Trust
+            </h1>
+            <div id="searchbox">
+                <input type="text" name="search" id="search" value="" />
+                <label for="search">Search</label>
+            </div>
+            <div id="hamnav"><a href="#">&#9776;</a></div>
+            <div id="searchresults"></div>
+        </header>
+        <nav>
+            <a href="/donate">Donate</a>
+            <a href="/photos">Photos/Videos</a>
+            <a href="/support-us">Support Us</a>
+            <a href="/get-involved">Join Us</a>
+            <a href="/history">History</a>
+            <a href="/volunteering">Volunteering</a>
+            <a href="/about">About</a>
+            <a href="/activities">Activities</a>
+            <a href="/meet-the-team">Meet the team</a>
+            <a href="/booking">Book a Trip</a>
+            <a href="/contact">Contact</a>
+            <a href="/health-and-safety">Health and Safety</a>
+        </nav>
+
+        <main>
+            {{{ body }}}
+        </main>
+        <footer>
+            {{> utcfooter}}
+        </footer>
+        {{{block "scripts"}}}
+    </body>
+</html>
+
+<!--       _
+       .__(.)< (MEOW)
+        \___)   
+ ~~~~~~~~~~~~~~~~~~-->

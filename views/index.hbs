@@ -1,0 +1,26 @@
+{{#extend "title"}} Home {{/extend}}
+
+<main>
+  <div class="video">
+    <img src="poster.jpg">
+<iframe width="1200" height="700" src="https://www.youtube-nocookie.com/embed/iliZrhnHLIs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>z
+  {{{body}}}
+</main>
+
+<img src="{{page.data.main_image.url}}" alt="{{page.data.main_image.alt}}" />
+<article>
+  {{log "page" page}}
+  <header><h1>{{asText page.data.title}}</h1></header>
+  {{{asHTML page.data.content}}}
+</article>
+
+<aside id="postlist">
+  <h2>Latest Posts</h2>
+  {{#each posts as |post|}}
+    <ul>
+      <li>
+        <a href="/post/{{post.uid}}">{{asText post.data.title}}</a>
+      </li>
+    </ul>
+  {{/each}}
+</aside>

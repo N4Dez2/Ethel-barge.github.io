@@ -1,0 +1,28 @@
+{{#extend "title" }} {{asText pet.data.name}} {{/extend}} {{! This is a comment : the log handlebars block below outputs the pet data in the glitch Tools-Logs }} {{ log 'pet' pet}}
+
+<section class="pet">
+    <article>
+        <h2>
+            {{asText pet.data.name}}
+        </h2>
+        <p>{{asText pet.data.name}} is a {{pet.data.age}} year old {{asText pet.data.species.data.name}}</p>
+
+        {{#if pet.data.image}}
+        <figure>
+            <img src="{{pet.data.image.url}}" width="200px" />
+            <figcaption>
+                {{asText pet.data.name}}
+            </figcaption>
+        </figure>
+        {{/if}} {{#if pet.data.traits}}
+        <h3>
+            Traits
+        </h3>
+        <ul>
+            {{#each pet.data.traits}} {{log 'trait' this }}
+            <li>{{asText this.trait.data.name}}</li>
+            {{/each}}
+        </ul>
+        {{/if}}
+    </article>
+</section>

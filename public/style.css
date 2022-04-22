@@ -1,0 +1,247 @@
+:root {
+  /* Monochrome */
+
+  --primary: #4f577b;
+  --secondary: #4f577b;
+  --background: #4f577b;
+  --surface: #7ba2e6;
+  --on-primary: white;
+  --on-secondary: white;
+  --on-background: #4f577b;
+  --on-surface: black;
+
+  --nav-bg: var(--primary);
+  --on-nav-bg: var(--on-primary);
+  --nav-hover: var(--secondary);
+  --on-nav-hover: var(--on-secondary);
+
+  --search-bg: var(--nav-bg);
+  --on-search-bg: var(--on-nav-bg);
+  --search-hover: var(--nav-hover);
+  --on-nav-hover: var(--on-nav-hover);
+}
+
+img {
+  max-width: 100%;
+}
+body {
+  background-color: #4a5381;
+}
+body > header {
+  background-color: var(--primary);
+  color: var(--on-primary);
+  grid-area: head;
+}
+nav {
+  display: none;
+  background-color: var(--nav-bg);
+  color: var(--on-nav-bg);
+
+  grid-area: nav;
+}
+
+main {
+  background-color: var(--surface);
+  color: var(--on-surface);
+  grid-area: main;
+}
+footer {
+  background-color: var(--primary);
+  color: var(--on-primary);
+  grid-area: foot;
+}
+/* Mobile */
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "head"
+    "nav"
+    "main"
+    "foot";
+}
+
+/* Tablet */
+@media only screen and (min-width: 768px) {
+  body {
+    grid-template-columns: 1fr 576px 192px 1fr;
+    grid-template-areas:
+      ".... head nav ...."
+      ".... main main ...."
+      ".... foot foot ....";
+  }
+}
+
+/* Desktop */
+@media only screen and (min-width: 1200px) {
+  body {
+    grid-template-columns: 1fr 800px 400px 1fr;
+    grid-template-areas:
+      ".... head nav  ...."
+      ".... head nav  ...."
+      ".... main main ...."
+      ".... foot foot ....";
+  }
+
+  nav a {
+    display: inline;
+  }
+}
+
+/* Navigation CSS - Mobile First */
+/* Which of our main colours will be used for which role in the nav*/
+
+/* On mobile hide the menu by default */
+
+/* make the nav links go all the way acros */
+nav a {
+  display: block;
+  padding: 10px;
+  text-align: center;
+}
+
+/* make all the nav links plain and contrasting*/
+nav a:link,
+nav a:visited,
+nav a:active {
+  text-decoration: none;
+  color: var(--on-nav-bg);
+}
+
+/* on hover change the colours */
+nav a:hover {
+  background-color: var(--nav-hover);
+  color: var(--on-nav-hover);
+}
+
+/* make the hamburger link plain and contrasting */
+#hamnav a:link,
+#hamnav a:visited,
+#hamnav a:active {
+  text-decoration: none;
+  background-color: var(--primary);
+  color: var(--on-primary);
+}
+
+/* On Tablet & Desktop the nav should be visible */
+@media only screen and (min-width: 768px) {
+  nav {
+    display: block;
+  }
+
+  #hamnav a {
+    display: none;
+  }
+}
+
+/* Desktop on Desktop I want the nav background surface colours*/
+@media only screen and (min-width: 1000px) {
+  :root {
+    --nav-bg: var(--surface);
+    --on-nav-bg: var(--on-surface);
+    --nav-hover: var(--secondary);
+    --on-nav-hover: var(--on-secondary);
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  :root {
+    --search-bg: var(--primary);
+    --on-search-bg: var(--on-primary);
+  }
+}
+
+#searchresults a {
+  display: block;
+}
+
+/* make all the nav links plain and contrasting*/
+#searchresults a:link,
+#searchresults a:visited,
+#searchresults a:active {
+  text-decoration: none;
+  color: var(--on-search-bg);
+}
+
+/* on hover change the colours */
+#searchresults a:hover {
+  background-color: var(--search-hover);
+  color: var(--on-search-hover);
+}
+
+#searchbox label {
+  text-decoration: none;
+  background-color: var(--primary);
+  color: var(--primary);
+}
+
+div.youtubecontainer {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+div.youtubecontainer iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+#wavyline {
+  grid-area: wave;
+  max-width: 100%;
+  min-width: 100%;
+}
+
+@media only screen and (min-width: 1000px) {
+  :root {
+    --search-bg: var(--primary);
+    --on-search-bg: var(--on-primary);
+  }
+}
+
+#searchresults a {
+  display: block;
+}
+
+/* make all the nav links plain and contrasting*/
+#searchresults a:link,
+#searchresults a:visited,
+#searchresults a:active {
+  text-decoration: none;
+  color: var(--on-search-bg);
+}
+
+/* on hover change the colours */
+#searchresults a:hover {
+  background-color: var(--search-hover);
+  color: var(--on-search-hover);
+}
+
+#searchbox label {
+  text-decoration: none;
+  background-color: var(--primary);
+  color: var(--primary);
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+body > header > h1:hover {
+  animation-name: pulse;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
