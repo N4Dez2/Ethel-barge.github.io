@@ -1,0 +1,7 @@
+{{#extend "title" }} {{asText page.data.title }} {{/extend}} 
+
+<article>
+  {{! log 'page' page}}
+  <header><h1>{{asText page.data.title }}</h1></header>
+  {{{asHTML page.data.content }}}
+</article>
